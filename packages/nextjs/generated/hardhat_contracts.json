@@ -1,0 +1,130 @@
+{
+  "1": [
+    {
+      "name": "mainnet",
+      "chainId": "1",
+      "contracts": {
+        "ENSBatchResolver": {
+          "address": "0x4bC4a43Cac594432ED4F48965E5bf5aCA319f350",
+          "abi": [
+            {
+              "stateMutability": "payable",
+              "type": "fallback"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract Registry",
+                  "name": "registry",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32[]",
+                  "name": "names",
+                  "type": "bytes32[]"
+                }
+              ],
+              "name": "batchResolveWithCustomRegistry",
+              "outputs": [
+                {
+                  "internalType": "address[]",
+                  "name": "",
+                  "type": "address[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes32[]",
+                  "name": "names",
+                  "type": "bytes32[]"
+                }
+              ],
+              "name": "batchResolveWithENSRegistry",
+              "outputs": [
+                {
+                  "internalType": "address[]",
+                  "name": "",
+                  "type": "address[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "receive"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "31337": [
+    {
+      "name": "localhost",
+      "chainId": "31337",
+      "contracts": {
+        "ENSBatchResolver": {
+          "address": "0xaB837301d12cDc4b97f1E910FC56C9179894d9cf",
+          "abi": [
+            {
+              "stateMutability": "payable",
+              "type": "fallback"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract Registry",
+                  "name": "registry",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32[]",
+                  "name": "names",
+                  "type": "bytes32[]"
+                }
+              ],
+              "name": "batchResolveWithCustomRegistry",
+              "outputs": [
+                {
+                  "internalType": "address[]",
+                  "name": "",
+                  "type": "address[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes32[]",
+                  "name": "names",
+                  "type": "bytes32[]"
+                }
+              ],
+              "name": "batchResolveWithENSRegistry",
+              "outputs": [
+                {
+                  "internalType": "address[]",
+                  "name": "",
+                  "type": "address[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "receive"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
