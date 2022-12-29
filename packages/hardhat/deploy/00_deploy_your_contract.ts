@@ -1,13 +1,14 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+import { ethers } from "ethers";
 
-const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const deployENSBatchResolver: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
   // proxy only in non-live network (localhost and hardhat network) enabling HCR (Hot Contract Replacement)
   // in live network, proxy is disabled and constructor is invoked
-  await deploy("YourContract", {
+  await deploy("ENSBatchResolver", {
     from: deployer,
     // Constructor args.
     args: [],
@@ -17,11 +18,18 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   });
 
   // Get the deployed contract.
-  // const yourContract = await hre.ethers.getContract("YourContract", deployer);
+  const ENSBatchResolver = await hre.ethers.getContract("ENSBatchResolver", deployer);
+
+  const addresses: `0x${string}`[] = await ENSBatchResolver.batchResolveWithENSRegistry([
+    ethers.utils.namehash("owocki.eth"),
+    ethers.utils.namehash("austingriffith.eth"),
+  ]);
+
+  console.log({ addresses });
 };
 
-export default deployYourContract;
+export default deployENSBatchResolver;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them
-// e.g. yarn deploy --tags YourContract
-deployYourContract.tags = ["YourContract"];
+// e.g. yarn deploy --tags ENSBatchResolver
+deployENSBatchResolver.tags = ["ENSBatchResolver"];
