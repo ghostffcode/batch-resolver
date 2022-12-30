@@ -98,7 +98,7 @@ const Home: NextPage = () => {
           rows={7}
           className="w-96 p-2"
           autoCorrect="false"
-          placeholder="Enter ENS, one line at a time"
+          placeholder="Enter ENS, one per line"
           onChange={e => setAddresses(e.target.value)}
         />
         <button className="btn btn-primary btn-sm mt-4" onClick={handleENSResolve}>
